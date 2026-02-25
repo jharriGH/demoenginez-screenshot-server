@@ -4,6 +4,15 @@ const puppeteer = require('puppeteer');
 const app = express();
 app.use(express.json());
 
+// CORS headers
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, x-auth-token');
+  if (req.method === 'OPTIONS') return res.sendStatus(200);
+  next();
+});
+
 const PORT = process.env.PORT || 8080;
 const AUTH_TOKEN = process.env.AUTH_TOKEN || 'demoenginez-screenshots-2024';
 
@@ -46,4 +55,5 @@ app.post('/screenshot', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
+
 
