@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 const AUTH_TOKEN = process.env.AUTH_TOKEN || 'demoenginez-screenshots-2024';
 
 app.get('/', (req, res) => {
@@ -46,3 +46,4 @@ app.post('/screenshot', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
+
