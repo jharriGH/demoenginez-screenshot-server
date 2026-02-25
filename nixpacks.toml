@@ -1,11 +1,2 @@
-[phases.setup]
-nixPkgs = ["nodejs-18_x", "playwright-driver"]
-
-[phases.install]
-cmds = ["npm ci"]
-
-[phases.build]
-cmds = ["npx playwright install chromium"]
-
 [start]
 cmd = "node server.js"
