@@ -35,7 +35,22 @@ app.post('/screenshot', async (req, res) => {
     browser = await puppeteer.launch({
       headless: 'new',
       executablePath: '/usr/bin/google-chrome-stable',
-      args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu','--single-process','--no-zygote']
+    args: [
+  '--no-sandbox',
+  '--disable-setuid-sandbox',
+  '--disable-dev-shm-usage',
+  '--disable-gpu',
+  '--no-first-run',
+  '--disable-extensions',
+  '--disable-background-networking',
+  '--disable-default-apps',
+  '--disable-sync',
+  '--disable-translate',
+  '--hide-scrollbars',
+  '--metrics-recording-only',
+  '--mute-audio',
+  '--safebrowsing-disable-auto-update'
+]
     });
 
     const page = await browser.newPage();
@@ -55,5 +70,6 @@ app.post('/screenshot', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
+
 
 
