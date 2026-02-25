@@ -1,3 +1,25 @@
+const express = require('express');
+const puppeteer = require('puppeteer');
+
+const app = express();
+app.use(express.json({ limit: '50mb' }));
+
+// CORS
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, x-auth-token');
+  if (req.method === 'OPTIONS') return res.sendStatus(200);
+  next();
+});
+
+const PORT = process.env.PORT || 8080;
+const AUTH_TOKEN = process.env.AUTH_TOKEN || 'demoenginez-screenshots-2024';
+
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'DemoEnginez Screenshot Server' });
+});
+
 app.post('/screenshot', async (req, res) => {
   const token = req.headers['x-auth-token'];
   if (token !== AUTH_TOKEN) {
@@ -53,3 +75,5 @@ app.post('/screenshot', async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
