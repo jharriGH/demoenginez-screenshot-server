@@ -55,8 +55,8 @@ app.post('/screenshot', async (req, res) => {
 
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
-    await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-    await new Promise(r => setTimeout(r, 2000));
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+await new Promise(r => setTimeout(r, 8000));
 
     const screenshot = await page.screenshot({ type: 'jpeg', quality: 85, encoding: 'base64' });
     await browser.close();
@@ -70,6 +70,7 @@ app.post('/screenshot', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
+
 
 
 
