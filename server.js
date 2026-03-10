@@ -65,10 +65,10 @@ app.post('/screenshot', async (req, res) => {
       await new Promise(r => setTimeout(r, 8000));
     }
 
-    const screenshot = await page.screenshot({ type: 'jpeg', quality: 85, encoding: 'base64' });
-    await browser.close();
-
-    res.json({ success: true, image: `data:image/jpeg;base64,${screenshot}` });
+   const screenshot = await page.screenshot({ type: 'jpeg', quality: 85 });
+await browser.close();
+res.set('Content-Type', 'image/jpeg');
+res.send(screenshot);
   } catch (error) {
     if (browser) await browser.close().catch(() => {});
     console.error('Screenshot failed:', error.message);
@@ -77,4 +77,5 @@ app.post('/screenshot', async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Screenshot server running on port ${PORT}`));
+
 
