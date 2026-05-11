@@ -1,215 +1,169 @@
----
-## AUTONOMOUS EXECUTION — READ THIS FIRST
-
-You are part of the King James Empire CC fleet.
-Jim Harris is NEVER the middleman. Ever.
-
-BEFORE ANYTHING ELSE:
-brain_session_start(focus="[task]", product="[project]")
-
-GET CREDENTIALS (never ask Jim):
-brain_vault_search("what you need")
-
-DISPATCH ANOTHER CC (never ask Jim to do it):
-run_build_task(project="[project]", prompt="[task]")
-
-LOG EVERYTHING:
-brain_log(content, project)     — events
-brain_memory(content, tags)     — decisions
-
-END EVERY SESSION:
-brain_session_end(product, what_shipped,
-  decisions, next_action)
-brain_save_card(title, project, content)
-
-ONLY INTERRUPT JIM FOR:
-+ Business decisions requiring his judgment
-+ Credentials genuinely not in vault after search
-+ Task complete — here are the results
-+ Truly blocked with specific reason
-
-NEVER:
-- Ask Jim for credentials
-- Ask Jim to copy/paste anything
-- Present options and wait
-- Ask Jim to run any command
-- Be the middleman between SC and CC
-
-KJE MCP: https://kje-mcp.onrender.com/mcp/T24NM1Sxbh7txJs-unNIjblaXMqA1OZW6gNU-Ud5Yjk/
-VPS: 192.161.173.97 (claude at /usr/local/bin/claude)
-Brain: https://jim-brain-production.up.railway.app
-Key: jim-brain-kje-2026-kingjames
----
-
-# ⚙️ DemoEnginez — CLAUDE.md
-# Managed by brain_sync.py (Brain sections)
-# + Manual additions (never auto-updated)
-# Last synced: May 05, 2026 02:45 PM PST
+# 🧠 DemoEnginez — CLAUDE.md
+# Auto-healed by claude_md_healer.py from Jim Brain state
+# Last healed: 2026-05-11 20:00:09 UTC
+# Repo: /opt/demoenginez
 
 ---
 
-## CURRENT STATUS
-<!-- BRAIN-SYNC:START:STATUS -->
-*Brain sync: May 05, 2026 02:45 PM PST*
+## WHO YOU WORK FOR
 
-**Status:** TESTING
-**Description:** 62-niche demo platform — groups 4-6 bugs pending
-**Next Action:** ⚡ Stress test all 62 niches. Fix remaining bugs. Close as COMPLETE. Then build sales page.
-<!-- BRAIN-SYNC:END:STATUS -->
+You are working for Jim Harris — King James Empire (KJE).
+Empire-wide rules in `/opt/jim-brain/CLAUDE.md` (KJ_RULEZ) apply unless this
+file explicitly supersedes them.
 
----
-
-## EMPIRE STATE & COSTS
-<!-- BRAIN-SYNC:START:EMPIRE_STATE -->
-- Clients: 0
-- MRR: $99.00
-- HOT leads: 23
-- Last decision: KJ Autonomous v2.0: 7/8 KJWidgetz + 8/8 DemoBoosterz agents live. Clone script built. Agent 4 stubbed pending AVA. VoiceDropz stubbed pending Drop Cowboy BYOC. Next: wire Agent 4 to KJ SalesAgentz, clone SiteEnginez + UnhideLocal pipelines.
-
-**AI Costs:**
-- Today: $0.0083
-- This month: $0.0083
-- All time: $0.0083
-
-**Empire:**
-- 7 live | 3 launch ready | 6 in progress
-<!-- BRAIN-SYNC:END:EMPIRE_STATE -->
+Brain endpoint: `https://jim-brain-production.up.railway.app`
+Brain key: `jim-brain-kje-2026-kingjames` (header: `x-brain-key`, lowercase)
 
 ---
 
-## RECENT DEMOENGINEZ MEMORIES
-<!-- BRAIN-SYNC:START:MEMORIES -->
-1. Tags: demoenginez
-2. Tags: demoboosterz
-3. Next: DemoEnginez and DemoBoosterz testing, sales pages, ecosystem go-live, KJ Autonomous multi-product clone, Marketing session
-4. DemoBoosterz status on March 26, 2026: LAUNCH READY
-5. DemoEnginez authenticates against a separate Supabase project at wvqifxycceixsiwsudve.supabase.co
-6. Projects include reviewbombz, kjle, kjwidgetz, demoenginez, demoboosterz, siteenginez, iasy, unhidelocal, testenginez
-7. Concept is DemoEnginez one-click fulfillment
-8. DemoBoosterz pipeline 8/8 live
-<!-- BRAIN-SYNC:END:MEMORIES -->
+## PROJECT STATUS
+
+- **Project:** DemoEnginez ⚙️
+- **ID:** `demoenginez`
+- **Group:** KJE SaaS
+- **Status:** `testing`
+- **Description:** 62-niche demo platform — groups 4-6 bugs pending
+
+### Next Action
+Stress test all 62 niches. Fix remaining bugs. Close as COMPLETE. Then build sales page.
 
 ---
 
-## BUILD STATE
-<!-- BRAIN-SYNC:START:BUILD_STATE -->
-**Card:** DemoEnginez TestEnginez Spec Card 2026-04-23
-**Saved:** 2026-04-23
+## RECENT MEMORIES (top 3)
 
-# DemoEnginez TestEnginez Spec Card
-
-## IDENTITY
-- KJE Product #: earliest KJE SaaS (pre-numbering era)
-- Slug: demoenginez
-- Category: SaaS (demo generation platform)
-- Status: in_progress (punch list items remaining)
-- Domain: app.demoenginez.com
-
-## URLS
-- Production: https://app.demoenginez.com
-- Test environment: TBD (may reuse prod with test account)
-- Backend API: TBD (likely /api on same origin)
-- Admin dashboard: same origin post-login
-
-## TEST AUTH
-- Requires login: yes
-- Test user: sales@mobilewebs.com / KingJames2026!
-- API auth header: n/a (session cookie after login)
-
-## CORE USER FLOWS (what TestEnginez should exercise)
-1. Login flow: POST credentials, receive session, land on dashboard
-2. Niche selection: 62 niches available, pick one
-3. Demo generation kick-off: submit form, wait for generation
-4. Demo preview: confirm rendered demo loads
-5. Export flow: verify export CTA exists (do not actually click to export)
-
-## EXPECTED DOM PATTERNS
-- Primary CTA text: Sign In on login, Generate Demo on dashboard
-- Page titles: DemoEnginez on public, Dashboard - DemoEnginez after login
-- Navigation items: Dashboard, Niches, My Demos, Settings
-- Critical selectors: niche cards carry data-niche-slug, generate button has data-action of generate
-
-## PAYMENT FLOW
-- Stripe mode: TBD (billing integration status pending punch list)
-- Stripe test cards allowed: TBD
-- Price IDs: TBD
-- Expected redirect: TBD
-
-## DO NOT TOUCH (during tests)
-- Actual demo exports (resource-intensive; eats GPU/render minutes)
-- Real demo delivery emails (demo completion triggers email to user)
-- Bulk demo generation (rate-limited; keep to 1 per test run)
-
-## KNOWN FLAKY AREAS
-- Demo generation takes 30-60s; tests need generous waits (default 30s will fail)
-- Shared Supabase schema demoenginez on project dhzpwobfihrprlcxqjbq: cross-product data leakage possible
-- Login form may drop the session cookie on first request if CORS misconfigured
-
-## AUTO-HEAL RATIONALE
-When proposing fixes:
-- If demo generation assertions time out, widen timeout to 90s BEFORE investigating selector drift
-- Never change test user credentials without checking if auth schema changed
-- If session drops, investigate CORS/cookie attributes before patching selectors
-- Prefer data-niche-slug over text match for niche selection (62 niches can be renamed)
-
-## BRAIN SYNC
-- Repo path: C:\Users\Jim\Documents\GitHub\demoenginez
-- Supabase schema: demoenginez on dhzpwobfihrprlcxqjbq
-- Related cards: DemoEnginez BUILD_STATE 8 (id 1775186699841), DemoEnginez BUILD_STATE-FINAL-v1 (id 1775521621740)
-
-<!-- BRAIN-SYNC:END:BUILD_STATE -->
-
----
-
-## MANUAL ADDITIONS
-<!-- brain_sync.py never modifies below this line -->
-
----
-
-## EMPIRE STATE & COSTS
-
----
-
-## RECENT DEMOENGINEZ MEMORIES
+1. Saved card IDs: ReviewBombz 1776982890230, KJLE 1776982893503, KJWidgetz 1776982896422, DemoEnginez 1776982899202, DemoBoosterz 1776982901880, SiteEnginez 1776982904787, IASY 1776982907530, UnhideLocal 1776982910247, TestEnginez 1776982912894
+2. Activity History Log — 480px right drawer in Lead Finder showing unified feed of exports, campaigns, DemoEnginez pushes
+3. New empire projects added on March 23, 2026: SiteEnginez (SiteEnginez.com + BuildEnginez.com — DemoEnginez one-click site fulfillment, Cloudflare Pages deploy), KJ Command Deck (KJLE React frontend, military sci-fi HUD, deck.kjle.com, Prompts 1-25 complete, AlertSystem re-enable pending), KJ Command Center (empire-wide dashboard Lovable app — all 6 products live metrics, Jim monitoring hub, planned build), KJ Autonomous (8-agent autonomous empire system — n8n + Vapi + Claude API, weeks 2-6 build plan), IAMStillHere (grief/memorial product — physical products pen-plotter handwriting laser engraved timelines canvas portraits sound wave jewelry memory boxes, ~250 home studio, referral via funeral homes hospices estate attorneys), DTF (Direct To Film printing business), DTG (Direct To Garment printing business)
 
 ---
 
 ## BUILD STATE
 
+**Card:** KJLE BUILD_STATE 2026-05-10 (Session 2B closed)
+**Saved:** 2026-05-11T01:21:09.193664
+
+# KJLE Build State — Session 2B (Truelist Bulk Batches) — CLOSED 2026-05-10
+
+## What shipped (commits)
+- b8b877d feat(email-clean): Truelist bulk batches architecture (Session 2B)
+- be3c39b fix(email-clean): NULL-semantics bug in select_uncleaned_leads
+- 0076569 fix(email-clean): paginate select_uncleaned_leads past PostgREST 1000-row cap
+- 14 repos updated via brain_sync for new status-banner rule
+- KJ_RULEZ.md commit 031a0c3 on kj-bridgedeck/main
+
+## Architecture changes
+- New migration: migrations/2026_05_10_truelist_batches.sql (audit table + email_sub_state + email_truelist_batch_id + 2 admin_settings keys)
+- Rewrite api/routes/enrichment_email_clean.py: parse_truelist_state (handles ok/invalid/risky/unknown + email_* prefixed variants), is_campaign_eligible (positive whitelist only), select_uncleaned_leads (HOT>WARM>COLD priority with .range() pagination), submit_batch (POST /api/v1/batches + audit), ingest_batch_result (idempotent cursor + id-range UPDATE), 4 new endpoints
+- New api/routes/webhooks_truelist.py: receiver shim at /webhooks/truelist/batch-complete?secret=... ready for Truelist dashboard webhook
+- scheduler.py: replaced v1 verify_inline loop with batch submitter; new job_email_clean_poll_batches cron every 30 min
+- 41-fixture boot check at scripts/test_email_clean_parser.py covering parser vocab, prefixed forms, defensive defaults, positive-whitelist campaign eligibility, CSV ingestion, reordered headers
+
+## Batch-1 verification (LIVE)
+- batch_id: 9292028e-f0e3-401a-ac5e-390e92838f9a
+- 4000 KJLE leads submitted, 3907 unique emails after Truelist dedup
+- Truelist completed in ~95 min wallclock
+- Auto-ingest counts: valid=2795, invalid=76, unknown=1129, error=0, no_csv_match=0
+- CSV reconciliation: 1:1 with ingest (CSV 2722 ok + 74 invalid + 1111 risky/unknown = 3907 unique; ingest 2795 + 76 + 1129 = 4000 = 3907 + 93 duplicates ✓)
+- Per-lead spot-check: 7/7 verified leads matched expected mapping AND scoped to batch-1
+- Sub-state preservation working: email_ok 2250, is_role 816, accept_all 326, failed_mx_check 42, failed_no_mailbox 19, unknown 547
+
+## Live segment + email state (post-batch-1)
+- total: 560,057 (was 556,830, +3,227 new from CSV import last night)
+- hot: 20,596 / warm: 129,524 / cold: 406,710 / unclassified: 3,227
+- by_email_status: valid 70,559 / invalid 76 (was 0!) / unknown 17,576 / error 3,490 / pending_batch 18,352
+
+## Bugs found and fixed mid-session
+- NULL-semantics bug: select_uncleaned_leads filtered .neq('email_status','pending_batch') which excludes NULL email_status rows in PostgREST. Switched to .is_('email_truelist_batch_id','null'). Same gotcha family as pain Session 1.
+- 1000-row response cap: .limit(25000) capped at 1000 per segment so first batch only marked 4000 leads. Switched to .range()-based pagination per segment, drains 1000 at a time.
+- Parser bug from v1: checked state=='bad' but Truelist returns 'invalid'. Fixed in parse_truelist_state; verified live by first-ever nonzero invalid count.
+
+## Investigation surprises (worth remembering)
+- Truelist's POST /batches accepts but silently ignores webhook_url field. Webhook is dashboard-side config only. Receiver shim built, awaiting dashboard wire-up.
+- verify_inline returns inconsistent prefixed/unprefixed state strings (email_invalid vs risky). Parser handles both defensively now.
+
+## Open anomalies for Session 2C
+- 2786 orphan leads with email_status='pending_batch' and no parent batch_id. Likely leftovers from earlier aborted submits. Cleanup: flush back to NULL or sweep into next batch.
+- 17576 'unknown' leads from v1 verify_inline include hidden invalids (the v1 parser miscategorized state=='invalid' as unknown). Re-verify via new architecture to recover them.
+- Truelist dashboard webhook not yet configured. 30-min poller is currently the only completion path. Latency 0-30 min instead of seconds.
+
+## Session 2C scope
+1. Configure Truelist dashboard webhook → /webhooks/truelist/batch-complete?secret=... (5 min Truelist UI work)
+2. Re-verify the 17576 v1-unknown leads via batch architecture
+3. Cleanup 2786 orphan pending_batch rows
+4. Watch first full weekend of 4-batches/night nightly cron — expect backlog clear in ~5 days at 100K/day
+5. Build Card v9 update reflecting Truelist-v2-as-canonical state
+
+## Pinned items (carry-over)
+- Send to DemoBoosterz from Lead Finder (after tour rebuild)
+- Schedule local backups for Documents/GitHub folder
+- Rotate exposed ReachInbox + DemoEnginez Supabase service role keys on Render
+
 
 ---
 
-## FIRST THING — DO THIS AUTOMATICALLY
+## EMPIRE-WIDE RULES (excerpt)
 
-```
-brain_session_start(focus="[today's task]", product="demoenginez")
-brain_search(query='demoenginez')
-brain_list_cards()   # find build card
-brain_get_card(id)   # load full spec
-# THEN ask Jim what to tackle
-```
+1. **Brain Endpoint Verification** — always hit `/health` then the real
+   endpoint with `x-brain-key` header BEFORE coding against it. Document
+   actual response shape. No assumptions from convention.
 
-**Do not wait to be asked. Always do this first.**
+2. **Empire Cost Logging** — any LLM call must be instrumented via
+   `kje-cost-logger` per `docs/EMPIRE_COST_LOGGING_BUILD_CARD.md`.
 
----
+3. **Env Var Automation** — CC never asks Jim to manually click env vars
+   into a dashboard. Use Render / Railway / Cloudflare APIs. Tokens live
+   in CC env (`RENDER_API_KEY`, `RAILWAY_TOKEN`, `CF_API_TOKEN`).
 
-## SESSION END — DO THIS AUTOMATICALLY
+4. **Gotcha Logging** — log any bug / workaround to Brain via
+   `POST /memory` with tags `["demoenginez", "gotcha", "lesson"]` the
+   moment context is fresh.
 
-```
-brain_session_end(
-  product="demoenginez",
-  what_shipped="[what was built]",
-  decisions="[key decisions]",
-  next_action="[most important next task]"
-)
-brain_save_card(
-  title="DemoEnginez BUILD_STATE [date]",
-  project="demoenginez",
-  content="[full build state md]"
-)
-```
+5. **Session Start / End** — every CC session begins with
+   `brain_session_start(focus="...", product="demoenginez")` and ends
+   with `brain_session_end(...)` + `brain_save_card(...)`.
 
 ---
 
-*Synced: May 05, 2026 02:45 PM PST*
-*Refresh: `python brain_sync.py demoenginez`*
+## VAULT KEYS AVAILABLE FOR THIS PROJECT
+
+Use `GET /vault/demoenginez/<KEY>/reveal` with header
+`x-brain-key: jim-brain-kje-2026-kingjames` to fetch real values.
+
+| Key | Masked | Service |
+|---|---|---|
+| `NODE_ENV` | `` | render |
+| `BRIDGEDECK_URL` | `` | render |
+| `BRIDGEDECK_INGEST_KEY` | `` | render |
+| `PUPPETEER_EXECUTABLE_PATH` | `` | render |
+| `PUPPETEER_SKIP_CHROMIUM_DOWNLOAD` | `` | render |
+
+Empire-wide shared keys (always available):
+
+- `GITHUB_PAT_VPS` — VPS automation PAT (contents:write)
+- `SUPABASE-PAT-SHARED` — Supabase DDL automation token
+- `SUPABASE_PERSONAL_ACCESS_TOKEN` — Supabase PAT (44+ chars)
+
+---
+
+## SESSION END PROTOCOL
+
+Before closing the chat, run:
+
+```
+POST /memory   tags=["demoenginez", "session_end"]
+               content="<what shipped, what's next>"
+POST /log      tags=["demoenginez", "session_complete"]
+               content="<one-liner>"
+POST /cards    title="<Project> BUILD_STATE <date>"
+               project="demoenginez"
+               content="<full markdown spec>"
+```
+
+If anything broke, log a gotcha memory FIRST so the next session inherits
+the lesson.
+
+---
+
+*Synced from Brain state at 2026-05-11 20:00:09 UTC.*
+*This file is auto-regenerated every 4h. Manual edits will be overwritten
+on the next heal if the rebuilt content differs by >20% of lines.*
